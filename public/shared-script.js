@@ -18,8 +18,8 @@ botOptions.botInfo = {
 botOptions.clientId = "cs-de247d47-4b00-54b7-9261-eddaa39a754e";
 botOptions.clientSecret = "e5WPiFqgun567KGjzq2LoUqvwnULI2q48/DrJnxdK1Q=";
 KoreChatSDK.chatConfig.botOptions.API_KEY_CONFIG.KEY = "9cb93b446f3744c0b678238a901b8aa18f904e3593184563a7e00e53d305ff8cstcd";
-KoreChatSDK.chatConfig.botOptions.openSocket = true;
-KoreChatSDK.chatConfig.pwcConfig = { enable: true };
+// KoreChatSDK.chatConfig.botOptions.openSocket = true;
+// KoreChatSDK.chatConfig.pwcConfig = { enable: true };
 
 const AgentDesktopPlugin =
   (window.AgentDeskTopPluginSDK && window.AgentDeskTopPluginSDK.AgentDesktopPlugin) ||
