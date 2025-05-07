@@ -16,6 +16,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret:'retailbot-secret', resave:false, saveUninitialized:false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+const customer = require('./public/StaplesChat'); // or move it out of /public
+
+app.use(express.static('public'));
+
+app.get('/api/customer', (req, res) => {
+  res.json(customer);
+});
+
 // Dummy products
 const products = [
   {id:1,name:'Wireless Mouse',price:25,image:'https://resource.logitechg.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-white-gallery-1.png?v=1'},

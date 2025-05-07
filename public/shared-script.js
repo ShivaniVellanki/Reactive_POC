@@ -7,6 +7,15 @@ var Korei18nPlugin = Korei18nPluginSDK.Korei18nPlugin;
 var WebKitSTTPlugin = WebKitSTTPluginSDK.WebKitSTT;
 chatWindowInstance.installPlugin(new Korei18nPlugin());
 
+fetch('/api/customer')
+  .then(response => response.json())
+  .then(customer => {
+    console.log('Fetched customer:', customer);
+    // You can now use customer object here
+  })
+  .catch(err => console.error('Failed to fetch customer:', err));
+
+
 var botOptions = chatConfig.botOptions;
 botOptions.koreAPIUrl = "https://platform.kore.ai/api/";
 botOptions.JWTUrl = "https://mk2r2rmj21.execute-api.us-east-1.amazonaws.com/dev/users/sts";
@@ -52,7 +61,7 @@ if (ProactiveWebCampaignPlugin) {
   );
 }
 
-KoreChatSDK.chatConfig.botOptions.botInfo.customData = { language: "french" };
+KoreChatSDK.chatConfig.botOptions.botInfo.customData = { customer };
 chatConfig.i18n = { defaultLanguage: "fr" };
 chatWindowInstance.plugins.Korei18nPlugin.config = { availableLanguages: ['fr'], defaultLanguage:'fr', languageStrings:{ fr: { message:'Message...' }}};
 chatConfig.branding.chat_bubble.style = "rounded";
