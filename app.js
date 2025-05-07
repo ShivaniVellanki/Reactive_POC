@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret:'retailbot-secret', resave:false, saveUninitialized:false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const customer = require('./public/StaplesChat'); // or move it out of /public
+const customer = require('./public/StaplesChat'); 
 
 app.use(express.static('public'));
 
